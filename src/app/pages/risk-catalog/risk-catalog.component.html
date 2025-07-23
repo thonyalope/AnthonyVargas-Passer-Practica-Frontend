@@ -3,3 +3,5 @@
   <mat-tab label="{{ 'risk.tabs.countries' | translate }}"></mat-tab>
   <mat-tab label="{{ 'risk.tabs.ids' | translate }}"></mat-tab>
 </mat-tab-group>
+
+<app-occupations *ngIf="selectedTabIndex === 0"></app-occupations>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { OccupationsComponent } from '../occupations/occupations.component';
 
 @Component({
   selector: 'app-risk-catalog',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./risk-catalog.component.scss']
 })
 export class RiskCatalogComponent {
-
+  selectedTabIndex = 0;
 }
