@@ -4,6 +4,7 @@ import { lastValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Ocupation } from '../models/ocupation.model';
 import { Country } from '../models/country.model';
+import { TypeId } from '../models/type-id.model';
 
 @Injectable({
     providedIn: 'root',
@@ -53,6 +54,24 @@ export class GeneralMethodsService {
       }
     } catch (error) {
       console.error('Error en getCountries:', error);
+      return [];
+    }
+  }
+
+  async getTypeIds(): Promise<TypeId[]> {
+    try {
+      const response$ = this.http.get<{ success: boolean; data: TypeId[] }>(
+        this.urlCatalogs + this.GET_TYPE_ID
+      );
+      const response = await lastValueFrom(response$);
+
+      if (response.success) {
+        return response.data;
+      } else {
+        throw new Error('GET_TYPE_ID request failed');
+      }
+    } catch (error) {
+      console.error('Error en getTypeIds:', error);
       return [];
     }
   }

@@ -1,3 +1,5 @@
+<h2 class="catalog-title">CATÁLOGO DE RIESGOS</h2>
+
 <mat-tab-group [(selectedIndex)]="selectedTabIndex">
   <mat-tab label="{{ 'risk.tabs.occupations' | translate }}"></mat-tab>
   <mat-tab label="{{ 'risk.tabs.countries' | translate }}"></mat-tab>
@@ -7,3 +9,6 @@
 <app-occupations *ngIf="selectedTabIndex === 0"></app-occupations>
 <app-countries *ngIf="selectedTabIndex === 1"></app-countries>
 <app-identification-type *ngIf="selectedTabIndex === 2"></app-identification-type>
+
+<div class="card">
+</div>

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RiskCatalogComponent } from './pages/risk-catalog/risk-catalog.component';
 
 const routes: Routes = [
-  { path: '', component: RiskCatalogComponent }  // Ruta principal
+  { path: '', component: RiskCatalogComponent }
 ];
 
 @NgModule({

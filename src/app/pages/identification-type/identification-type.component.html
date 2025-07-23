@@ -1,1 +1,35 @@
-<p>{{ 'risk.tabs.ids' | translate }} works!</p>
+<div class="card">
+  <p class="tab-title">{{ 'risk.ids.search' | translate }}</p>
+
+  <mat-form-field appearance="outline" class="custom-select">
+    <mat-select [(value)]="selectedTypeId" placeholder="{{ 'risk.ids.selectType' | translate }}">
+      <mat-option value="">{{ 'risk.ids.selectAll' | translate }}</mat-option>
+      <mat-option *ngFor="let type of typeIds" [value]="type._id">
+        {{ type.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="filteredIds" class="mat-elevation-z1">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ 'risk.ids.name' | translate }}</th>
+        <td mat-cell *matCellDef="let id">{{ id.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef>{{ 'risk.ids.code' | translate }}</th>
+        <td mat-cell *matCellDef="let id">{{ id.code }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef>{{ 'risk.ids.country' | translate }}</th>
+        <td mat-cell *matCellDef="let id">{{ id.country }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

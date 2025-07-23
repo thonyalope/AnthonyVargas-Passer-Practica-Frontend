@@ -10,6 +10,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatMenuModule} from '@angular/material/menu';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -17,14 +18,14 @@ import {CommonModule} from '@angular/common';
     MatFormFieldModule, MatInputModule, MatNativeDateModule,
     MatIconModule, MatButtonModule, MatIconModule,
     MatTabsModule, MatSelectModule, MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule, MatTableModule
   ],
   exports: [
     ReactiveFormsModule, FormsModule, CommonModule,
     MatFormFieldModule, MatInputModule, MatNativeDateModule,
     MatIconModule, MatButtonModule, MatIconModule,
     MatTabsModule, MatSelectModule, MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule, MatTableModule
   ]
 })
 export class AppMaterialModule {}

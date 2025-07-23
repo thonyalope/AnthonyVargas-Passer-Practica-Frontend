@@ -4,6 +4,25 @@
       "occupations": "Ocupaciones",
       "countries": "Países",
       "ids": "Identificaciones"
+    },
+    "occupations": {
+      "searchPlaceholder": "Buscar",
+      "selectAll": "Ocupaciones",
+      "name": "Ocupación",
+      "description": "Descripción"
+    },
+    "countries": {
+      "search": "Buscar",
+      "name": "País",
+      "sugefCode": "Código SUGEF",
+      "riskScore": "Nivel de riesgo"
+    },
+    "ids": {
+    "search": "Buscar",
+    "selectType": "Seleccionar tipo de identificación",
+    "name": "Nombre",
+    "code": "Código",
+    "country": "País"
     }
   }
 }

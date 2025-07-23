@@ -1,3 +1,33 @@
-<p>{{ 'risk.tabs.countries' | translate }}</p>
+<div class="card">
+  <p class="tab-title">{{ 'risk.countries.search' | translate }}</p>
 
-<pre>{{ countries | json }}</pre>
+  <mat-form-field appearance="outline" class="custom-input">
+    <input matInput [formControl]="countryFilter" placeholder="{{ 'risk.countries.name' | translate }}" />
+    <button mat-icon-button matSuffix *ngIf="countryFilter.value" (click)="countryFilter.setValue('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="filteredCountries" class="mat-elevation-z1">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> {{ 'risk.countries.name' | translate }} </th>
+        <td mat-cell *matCellDef="let c"> {{ c.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="sugefCode">
+        <th mat-header-cell *matHeaderCellDef> {{ 'risk.countries.sugefCode' | translate }} </th>
+        <td mat-cell *matCellDef="let c"> {{ c.sugefCode }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="riskScore">
+        <th mat-header-cell *matHeaderCellDef> {{ 'risk.countries.riskScore' | translate }} </th>
+        <td mat-cell *matCellDef="let c"> {{ c.riskScore }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
