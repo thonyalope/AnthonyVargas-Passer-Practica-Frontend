@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OccupationsComponent } from '../occupations/occupations.component';
+import { CountriesComponent } from '../countries/countries.component';
 
 @Component({
   selector: 'app-risk-catalog',
