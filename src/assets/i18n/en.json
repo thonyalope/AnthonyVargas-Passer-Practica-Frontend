@@ -1,3 +1,9 @@
 {
-  
+  "risk": {
+    "tabs": {
+      "occupations": "Occupations",
+      "countries": "Countries",
+      "ids": "Identifications"
+    }
+  }
 }
