@@ -1,4 +1,34 @@
-<p>{{ 'risk.tabs.occupations' | translate }}</p>
+<div class="card">
+  <p class="tab-title">{{ 'risk.ids.search' | translate }}</p>
 
-<!-- DEBUG: visualiza el array -->
-<pre>{{ ocupations | json }}</pre>
+  <mat-form-field appearance="outline" class="custom-select">
+    <mat-label>{{ 'risk.occupations.selectAll' | translate }}</mat-label>
+    <mat-select [formControl]="occupationFilter" disableRipple>
+      <mat-option *ngFor="let o of ocupations" [value]="o.name">
+        {{ o.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="filteredOcupations" class="mat-elevation-z1">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ 'risk.occupations.name' | translate }}</th>
+        <td mat-cell *matCellDef="let o">{{ o.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let o">
+          <button mat-icon-button color="primary" aria-label="Editar">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

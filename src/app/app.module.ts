@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app.material.module';
@@ -33,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'es',
       loader: {
