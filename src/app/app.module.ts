@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { RiskCatalogComponent } from './pages/risk-catalog/risk-catalog.component';
+import { OccupationsComponent } from './pages/occupations/occupations.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -19,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     AppComponent,
-    RiskCatalogComponent
+    RiskCatalogComponent,
+    OccupationsComponent
   ],
   imports: [
     BrowserModule,
