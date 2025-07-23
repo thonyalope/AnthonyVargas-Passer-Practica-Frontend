@@ -13,6 +13,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { RiskCatalogComponent } from './pages/risk-catalog/risk-catalog.component';
 import { OccupationsComponent } from './pages/occupations/occupations.component';
 import { CountriesComponent } from './pages/countries/countries.component';
+import { IdentificationTypeComponent } from './pages/identification-type/identification-type.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppComponent,
     RiskCatalogComponent,
     OccupationsComponent,
-    CountriesComponent
+    CountriesComponent,
+    IdentificationTypeComponent
   ],
   imports: [
     BrowserModule,
